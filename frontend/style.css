@@ -1,0 +1,244 @@
+:root {
+    --bg-color: #020617;
+    --card-bg: #0f172a;
+    --accent-gold: #f59e0b;
+    --accent-vivid: #38bdf8;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --user-bubble: #1e293b;
+    --assistant-bubble: #1e1b4b;
+    --input-bg: #1e293b;
+    --shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    background: var(--card-bg);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    position: relative;
+    margin: 20px;
+    backdrop-filter: blur(10px);
+}
+
+header {
+    padding: 24px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.accent {
+    color: var(--accent-gold);
+}
+
+.version {
+    font-size: 0.65rem;
+    vertical-align: super;
+    background: var(--accent-gold);
+    color: var(--bg-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.download-btn {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.download-btn:hover {
+    color: var(--accent-gold);
+}
+
+.download-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+.mascot-container img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-gold);
+}
+
+#chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-coffee) transparent;
+}
+
+#chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-container::-webkit-scrollbar-thumb {
+    background: var(--accent-gold);
+    border-radius: 10px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+    align-self: flex-end;
+}
+
+.message.assistant {
+    align-self: flex-start;
+}
+
+.bubble {
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.user .bubble {
+    background-color: var(--user-bubble);
+    border-bottom-right-radius: 4px;
+    color: #fff;
+}
+
+.assistant .bubble {
+    background-color: var(--assistant-bubble);
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+footer {
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+
+.input-area {
+    display: flex;
+    background-color: var(--input-bg);
+    border-radius: 15px;
+    padding: 8px;
+    align-items: center;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.input-area:focus-within {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background-color: var(--accent-gold);
+    color: var(--bg-color);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #f1c43d;
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.typing {
+    font-size: 0.85rem;
+    color: var(--accent-vivid);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}

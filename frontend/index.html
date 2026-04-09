@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoción AI | Employee Chat</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo-container">
+                <h1>DEVOCIÓN <span class="accent">AI</span> <span class="version">v2</span></h1>
+                <p class="subtitle">Manual del Empleado</p>
+            </div>
+            <div class="header-actions">
+                <a href="/download" class="download-btn" title="Descargar Manual">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2.621 19.485C2.721 19.884 2.972 20.231 3.327 20.458C3.682 20.685 4.116 20.776 4.537 20.715L19.463 18.539C19.884 18.477 20.318 18.568 20.673 18.795C21.028 19.022 21.279 19.369 21.379 19.768L22 22.253" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <div class="mascot-container">
+                    <img src="/frontend/Devo3_original.gif" alt="Devo Mascot" id="mascot">
+                </div>
+            </div>
+        </header>
+
+        <main id="chat-container">
+            <div id="messages">
+                <div class="message assistant">
+                    <div class="bubble">
+                        ¡Hola! Soy tu asistente de Café Devoción. ¿En qué puedo ayudarte hoy con respecto al Manual del Empleado?
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="Pregúntame sobre el manual..." autocomplete="off">
+                <button id="send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script src="/frontend/script.js"></script>
+</body>
+</html>
