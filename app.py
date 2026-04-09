@@ -200,7 +200,7 @@ if prompt := st.chat_input("¿En qué puedo ayudarte hoy?"):
                     except Exception as e:
                         error_str = str(e)
                         if ("429" in error_str or "RESOURCE_EXHAUSTED" in error_str) and attempt < max_retries - 1:
-                            wait_time = (attempt + 1) * 15
+                            wait_time = (attempt + 1) * 5
                             placeholder.info(f"☕ *Estamos preparando tu respuesta (reintentando por límites de cuota en {wait_time}s)...*")
                             time.sleep(wait_time)
                             full_response = "" # Reset for retry
