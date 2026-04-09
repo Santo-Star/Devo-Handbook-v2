@@ -142,7 +142,7 @@ def get_pdf_download_link():
         with open(pdf_path, "rb") as f:
             pdf_bytes = f.read()
         b64 = base64.b64encode(pdf_bytes).decode()
-        return f'<a href="data:application/pdf;base64,{b64}" download="Manual_Empleado_Devocion.pdf" class="download-btn" style="color: #94a3b8; text-decoration: none; font-size: 0.8rem; border: 1px solid #94a3b8; padding: 5px 10px; border-radius: 8px;">⬇️ Descargar PDF</a>'
+        return f'<a href="data:application/pdf;base64,{b64}" download="Manual_Empleado_Devocion.pdf" class="download-btn" style="color: #94a3b8; text-decoration: none; font-size: 0.8rem; border: 1px solid #94a3b8; padding: 5px 10px; border-radius: 8px;">⬇️ Descargar Handbook</a>'
     return ""
 
 # 6. Sidebar / Header
