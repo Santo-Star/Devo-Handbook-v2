@@ -155,7 +155,7 @@ with st.container():
              st.write("☕")
     with col2:
         st.markdown('<div class="premium-title">DEVOCIÓN <span style="color:white">HANDBOOK</span></div>', unsafe_allow_html=True)
-        st.markdown('<div class="subtitle">Digital Barista Assistant v2.0</div>', unsafe_allow_html=True)
+        st.markdown('<div class="subtitle">Digital Barista Assistant v2.1</div>', unsafe_allow_html=True)
 
 st.markdown(get_pdf_download_link(), unsafe_allow_html=True)
 st.divider()
