@@ -117,7 +117,7 @@ def load_rag_chain():
     llm = ChatGoogleGenerativeAI(model=MODEL_NAME, temperature=0, google_api_key=api_key, max_retries=3)
     
     system_prompt = (
-        "Eres un asistente inteligente para Café Devoción. "
+        "Eres un asistente inteligente bilingüe para Café Devoción. "
         "Basándote EXCLUSIVAMENTE en el manual (contexto), responde la pregunta. "
         "Si no está en el manual, di: 'Lo siento, esa información no está en mi manual de Café Devoción.' "
         "Mantén un tono profesional, amable y de barista premium. "
